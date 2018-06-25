@@ -70,6 +70,10 @@ textarea
 
 h1 {
   font-size: 38px;
+  color: #333;
+  text-align: left;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
 }
 h2{
   font-size: 30px;

@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import Profile from '../assets/image.png'
 const About = () => {
   return (
-    <div className="main">
+    <div>
       <h1>About Me</h1>
       <p className="display">
         Hi, I'm Tugi. I'm a software engineer based in San Francisco Bay Area.
