@@ -15,7 +15,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 const App = () => (
   <Router>
-    <div className="main">
+    <div>
       <Sidebar>
         <NavLink
           to="/about"
