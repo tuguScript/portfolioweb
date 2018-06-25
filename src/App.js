@@ -1,62 +1,53 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Header from "./components/Header/Header";
+import {
+  NavLink,
+  Redirect,
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
+import About from "./views/About";
+import Works from "./views/Works";
+import Contact from "./views/Contact";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Footer from "./components/Footer/Footer";
-const Home = () => (
-  <div>
-    <h2> Home </h2>
-    <h2> Home </h2>
-    <h2> Home </h2>
-  </div>
-);
-
-const About = () => (
-  <div>
-    <h2> About </h2>
-  </div>
-);
-
-const Topic = ({ match }) => (
-  <div>
-    <h3> {match.params.topicId} </h3>
-  </div>
-);
-
-const Topics = ({ match }) => (
-  <div>
-    <h2> Topics </h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}> Rendering with React </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}> Components </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}> Props v.State </Link>
-      </li>
-    </ul>
-    <Route path={`${match.path}/:topicId`} component={Topic} />
-    <Route
-      exact
-      path={match.path}
-      render={() => <h3> Please select a topic. </h3>}
-    />
-  </div>
-);
 
 const App = () => (
   <Router>
-    <div>
-      <Sidebar />
-      <Header />
-
-      <div className="main">
-        <Route exact path="/" component={Home} />
-        <Route path="/works" component={About} />
-        <Route path="/contact" component={Topics} />
-        <Footer />
+    <div className="main">
+      <Sidebar>
+        <NavLink
+          to="/about"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red"
+          }}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to="/works"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red"
+          }}
+        >
+          Works
+        </NavLink>
+        <NavLink
+          to="/contact"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red"
+          }}
+        >
+          Contact
+        </NavLink>
+      </Sidebar>
+      <div className="body">
+        <Route exact path="/" render={() => <Redirect to="/about" />} />
+        <Route exact path="/about" component={About} />
+        <Route path="/works" component={Works} />
+        <Route path="/contact" component={Contact} />
       </div>
     </div>
   </Router>
