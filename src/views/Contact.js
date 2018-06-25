@@ -1,13 +1,24 @@
-import React from 'react'
+import React from "react";
 import Footer from "../components/Footer/Footer";
+import Button from "antd/lib/button";
+import { Input } from "antd";
+
+const { TextArea } = Input;
 
 const Contact = () => {
   return (
     <div>
       <h1>Contact</h1>
-      <Footer/>
+      <div className="caption">Email:</div>
+      <TextArea placeholder="..." autosize />
+      <div style={{ margin: "24px 0" }} />
+      <div className="caption">Text:</div>
+      <TextArea placeholder="..." autosize={{ minRows: 2, maxRows: 6 }} />
+      <Button type="primary">Send</Button>
+      <Button type="secondary">Clean</Button>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
