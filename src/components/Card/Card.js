@@ -1,19 +1,17 @@
 import React from "react";
 
-const Card = ({ title, isImage, description, category, imgSource }) => {
-  return isImage ? (
+const Card = ({post}) => {
+  return post.isImage ? (
     <div>
       img
-      {title}-
-      {description}-
-      {category}-{isImage}-{imgSource}
+      {post.title}-<img src={post.imgSource} alt=""/>
     </div>
   ) : (
     <div>
       card
-      {title}-
-      {description}-
-      {category}-{isImage}-{imgSource}
+      {post.title}-
+      {post.description}-
+      {post.category}-{post.isImage}-<img src={post.imgSource} alt=""/>
     </div>
   );
 };
