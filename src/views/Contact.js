@@ -1,8 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer/Footer";
-import Button from "antd/lib/button";
 import { Input } from "antd";
-
+import Button from '../components/Button/Button'
 const { TextArea } = Input;
 
 const Contact = () => {
