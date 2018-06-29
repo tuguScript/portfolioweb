@@ -14,12 +14,17 @@ import Contact from "./views/Contact";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import injectSheet from "react-jss";
+import background from "./assets/background.jpg";
 
 const styles = {
   container: {
+    minHeight: "900px",
+    color: "white",
+    background: `url(${background}) no-repeat center center fixed`,
+    backgroundSize: `cover`,
     display: "grid",
     gridTemplateColumns: "256px 1fr",
-    gridTemplateRows: "auto",
+    gridTemplateRows: "64px auto",
     gridTemplateAreas: `
                   'sidebar header'
                   'sidebar body'
@@ -29,7 +34,8 @@ const styles = {
     gridArea: "header"
   },
   body: {
-    gridArea: "body"
+    gridArea: "body",
+    background: "#1E2B41"
   },
   sidebar: {
     gridArea: "sidebar"
@@ -82,6 +88,12 @@ const App = ({ classes }) => (
     </div>
   </Router>
 );
+
+App.defaultProps = {
+  backgroundImage: background,
+  fontWeight: "bold",
+  labelColor: "red"
+};
 
 const StyledApp = injectSheet(styles)(App);
 

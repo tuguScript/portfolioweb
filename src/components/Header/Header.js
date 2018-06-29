@@ -3,7 +3,10 @@ import injectSheet from "react-jss";
 
 const styles = {
   header: {
-    height: '64px'
+    height: '64px',
+    border: '1px solid white',
+    width: '100%',
+    position: 'fixed'
   }
 };
 
