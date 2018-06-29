@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import injectSheet from "react-jss";
 import colors from "../../utils/colors";
+import { height } from "window-size";
+import { List, Icon } from "antd";
 
 const styles = {
   sidebar: {
@@ -31,7 +33,9 @@ const styles = {
   content: {
     top: "64px",
     position: "fixed",
-    zIndex: "10"
+    zIndex: "10",
+    width: "256px",
+    paddingLeft: "30px"
   },
   header: {
     position: "fixed",
@@ -40,8 +44,15 @@ const styles = {
     width: "256px",
     height: "64px",
     alignItems: "center",
-    justifyContent: "center",
-    borderBottom: `1px solid ${colors.PRIMARY}`
+    // justifyContent: "center",
+    borderBottom: `1px solid ${colors.COLOR_A_3}`
+  },
+  footer: {
+    position: "fixed",
+    bottom: "0",
+    width: 256,
+    height: 80,
+    padding: 30
   }
 };
 
@@ -53,19 +64,15 @@ export class Sidebar extends Component {
       <div>
         <div className={this.props.classes.sidebar} />
         <div className={classes.header}>
-          <h3>Tugi</h3>
+          <h3 style={{paddingLeft:40}}>✌️ Tugi</h3>
         </div>
-        <div className={classes.content}>
-          <ul>
-            {React.Children.map(children, (child, i) => {
-              // Ignore the first child
-              if (i < 0) return;
-              return <li>{child}</li>;
-            })}
-          </ul>
-        </div>
-        <div>
-          <a>tuguscript@gmail.com</a>
+        <div className={classes.content}>{children}</div>
+        <div className={classes.footer}>
+          <Icon
+            type="info-circle-o"
+            style={{ fontSize: 14, marginRight: "20px", color: "white" }}
+          />
+          <a style={{color: 'white'}}>tuguscript@gmail.com</a>
         </div>
       </div>
     );
