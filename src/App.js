@@ -25,7 +25,7 @@ const styles = {
     background: `url(${background}) no-repeat center center fixed`,
     backgroundSize: `cover`,
     display: "grid",
-    gridTemplateColumns: "256px 1fr",
+    gridTemplateColumns: "256px auto",
     gridTemplateRows: "64px auto",
     gridTemplateAreas: `
                   'sidebar header'
