@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
+import colors from '../../utils/colors'
 
 const styles = {
   header: {
     height: '64px',
-    border: '1px solid white',
+    // border: '1px solid white',
+    boxShadow: `0 0px 8px 0 rgba(0, 0, 0, 0.4)`,
     width: '100%',
-    position: 'fixed'
+    position: 'fixed',
+    backgroundColor: `${colors.COLOR_A_4}`
   }
 };
 

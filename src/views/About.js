@@ -2,10 +2,11 @@ import React from "react";
 import Footer from "../components/Footer/Footer";
 import Profile from "../assets/image.png";
 import injectSheet from "react-jss";
+import Works from '../views/Works'
 
 const styles = {
   body: {
-    width: "1184px",
+    width: "100%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center"
@@ -41,6 +42,7 @@ const About0 = ({ classes }) => {
         </div>
         {/* <Footer /> */}
       </div>
+      <Works />
     </div>
   );
 };

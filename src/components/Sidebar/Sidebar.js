@@ -9,6 +9,7 @@ const styles = {
   sidebar: {
     width: "256px",
     minHeight: "836px",
+    height: '100%',
     margin: "0px 0px 0px 0px",
     position: "fixed",
     padding: "10px 5px",
