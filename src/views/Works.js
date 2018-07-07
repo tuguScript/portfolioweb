@@ -8,6 +8,7 @@ const styles = {
   container: {
     display: 'grid',
     gridTemplateColumns: `1fr 1fr 1fr`,
+    columnGap: '24px',
     margin: '0px 24px'
   }
 };
