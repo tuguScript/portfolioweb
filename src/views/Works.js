@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "../components/Footer/Footer";
 import Card from "../components/Card/Card";
 import posts from "../utils/data";
 import injectSheet from "react-jss";
@@ -23,7 +22,6 @@ class Works0 extends Component {
       <div>
         <h1>Works</h1>
         <div className={this.props.classes.container}>{Cards}</div>
-        <Footer />
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "../components/Footer/Footer";
 import { Input } from "antd";
 import Button from "../components/Button/Button";
 import axios from "axios";
@@ -65,7 +64,6 @@ export default class Contact extends Component {
           Send
         </Button>
         <Button type="secondary">Clean</Button>
-        <Footer />
       </div>
     );
   }

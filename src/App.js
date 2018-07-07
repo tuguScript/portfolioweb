@@ -1,6 +1,7 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 import {
   NavLink,
   Redirect,
@@ -16,7 +17,7 @@ import Header from "./components/Header/Header";
 import injectSheet from "react-jss";
 import background from "./assets/background.jpg";
 import { List, Icon } from "antd";
-import colors from './utils/colors'
+import colors from "./utils/colors";
 
 const styles = {
   container: {
@@ -26,10 +27,11 @@ const styles = {
     backgroundSize: `cover`,
     display: "grid",
     gridTemplateColumns: "256px auto",
-    gridTemplateRows: "64px auto",
+    gridTemplateRows: "64px auto 64px",
     gridTemplateAreas: `
                   'sidebar header'
                   'sidebar body'
+                  'sidebar footer'
                   `
   },
   header: {
@@ -38,6 +40,9 @@ const styles = {
   body: {
     gridArea: "body",
     background: "#1E2B41"
+  },
+  footer: {
+    gridArea: `footer`
   },
   sidebar: {
     gridArea: "sidebar"
@@ -65,15 +70,18 @@ const App = ({ classes }) => (
           renderItem={item => (
             <List.Item>
               <NavLink
-              style={{color: 'white'}}
+                style={{ color: "white" }}
                 to={item.link}
                 activeStyle={{
                   fontWeight: "bold",
                   color: `${colors.PRIMARY}`
                 }}
               >
-                <Icon type={item.icon} style={{ fontSize: 14, marginRight: '20px', color: 'white' }} />
-                
+                <Icon
+                  type={item.icon}
+                  style={{ fontSize: 14, marginRight: "20px", color: "white" }}
+                />
+
                 {item.desc}
               </NavLink>
             </List.Item>
@@ -112,6 +120,9 @@ const App = ({ classes }) => (
         <Route exact path="/about" component={About} />
         <Route path="/works" component={Works} />
         <Route path="/contact" component={Contact} />
+      </div>
+      <div className={classes.footer}>
+        <Footer />
       </div>
     </div>
   </Router>

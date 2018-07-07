@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
 import Profile from "../assets/image.png";
 import injectSheet from "react-jss";
 import Works from '../views/Works'
