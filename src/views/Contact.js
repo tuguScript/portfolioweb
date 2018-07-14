@@ -2,9 +2,20 @@ import React, { Component } from "react";
 import { Input } from "antd";
 import Button from "../components/Button/Button";
 import axios from "axios";
+import injectSheet from "react-jss";
 const { TextArea } = Input;
 
-export default class Contact extends Component {
+const styles = {
+  form: {
+    width: 500,
+    margin: '0 auto'
+  },
+  body: {
+    
+  }
+};
+
+class Contact0 extends Component {
   constructor(props) {
     super(props);
     this.sendEmail = this.sendEmail.bind(this);
@@ -16,7 +27,7 @@ export default class Contact extends Component {
   }
   componentDidMount = () => {
     this.emailTextInput.focus();
-    console.log(this.emailTextInput)
+    console.log(this.emailTextInput);
   };
   sendEmail() {
     if (
@@ -42,29 +53,36 @@ export default class Contact extends Component {
       });
   }
   render() {
+    let classes = this.props.classes;
     return (
-      <div>
-        <h1>Contact</h1>
-        <div className="caption">Email:</div>
-        <TextArea
-          ref={this.setEmailTextInputRef}
-          placeholder="..."
-          autosize
-          onChange={e => this.setState({ emailTextInput: e.target.value })}
-        />
-        <div style={{ margin: "24px 0" }} />
-        <div className="caption">Text:</div>
-        <TextArea
-          ref={this.textInput}
-          placeholder="..."
-          autosize={{ minRows: 2, maxRows: 6 }}
-          onChange={e => this.setState({ messageTextInput: e.target.value })}
-        />
-        <Button type="primary" onClick={() => this.sendEmail()}>
-          Send
-        </Button>
-        <Button type="secondary">Clean</Button>
+      <div className={classes.body}>
+        <div className={classes.form}>
+          <h1>Contact</h1>
+          <div className="caption">Email:</div>
+          <TextArea
+            ref={this.setEmailTextInputRef}
+            placeholder="..."
+            autosize
+            onChange={e => this.setState({ emailTextInput: e.target.value })}
+          />
+          <div style={{ margin: "24px 0" }} />
+          <div className="caption">Text:</div>
+          <TextArea
+            ref={this.textInput}
+            placeholder="..."
+            autosize={{ minRows: 2, maxRows: 6 }}
+            onChange={e => this.setState({ messageTextInput: e.target.value })}
+          />
+          <Button type="primary" onClick={() => this.sendEmail()}>
+            Send
+          </Button>
+          <Button type="secondary">Clean</Button>
+        </div>
       </div>
     );
   }
 }
+
+const Contact = injectSheet(styles)(Contact0);
+
+export default Contact;

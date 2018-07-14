@@ -39,7 +39,8 @@ const styles = {
   },
   body: {
     gridArea: "body",
-    background: "#1E2B41"
+    background: "#1E2B41",
+    padding: "0px 30px 30px 30px"
   },
   footer: {
     gridArea: `footer`
@@ -87,33 +88,6 @@ const App = ({ classes }) => (
             </List.Item>
           )}
         />
-        {/* <NavLink
-          to="/about"
-          activeStyle={{
-            fontWeight: "bold",
-            color: "red"
-          }}
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/works"
-          activeStyle={{
-            fontWeight: "bold",
-            color: "red"
-          }}
-        >
-          Works
-        </NavLink>
-        <NavLink
-          to="/contact"
-          activeStyle={{
-            fontWeight: "bold",
-            color: "red"
-          }}
-        >
-          Contact
-        </NavLink> */}
       </Sidebar>
       <div className={classes.body}>
         <Route exact path="/" render={() => <Redirect to="/about" />} />

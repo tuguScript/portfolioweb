@@ -5,13 +5,12 @@ import injectSheet from "react-jss";
 
 const styles = {
   container: {
-    display: 'grid',
+    display: "grid",
     gridTemplateColumns: `1fr 1fr 1fr`,
-    columnGap: '24px',
-    margin: '0px 24px'
+    columnGap: "24px",
+    margin: "0px 24px"
   }
 };
-
 
 class Works0 extends Component {
   render() {
@@ -20,7 +19,7 @@ class Works0 extends Component {
     });
     return (
       <div>
-        <h1>Works</h1>
+        <h1 style={{ width: "130px" }}>Works</h1>
         <div className={this.props.classes.container}>{Cards}</div>
       </div>
     );
