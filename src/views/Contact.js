@@ -8,10 +8,23 @@ const { TextArea } = Input;
 const styles = {
   form: {
     width: 500,
-    margin: '0 auto'
+    display: `flex`,
+    height: 300,
+    flexDirection: `column`,
+    justifyContent: `space-around`
+    // margin: '0 auto'
   },
   body: {
-    
+    height: `100%`,
+    width: `100%`,
+    display: `flex`,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttons: {
+    width: 150,
+    display: `flex`,
+    justifyContent: `space-between`
   }
 };
 
@@ -57,26 +70,32 @@ class Contact0 extends Component {
     return (
       <div className={classes.body}>
         <div className={classes.form}>
-          <h1>Contact</h1>
-          <div className="caption">Email:</div>
-          <TextArea
-            ref={this.setEmailTextInputRef}
-            placeholder="..."
-            autosize
-            onChange={e => this.setState({ emailTextInput: e.target.value })}
-          />
-          <div style={{ margin: "24px 0" }} />
-          <div className="caption">Text:</div>
-          <TextArea
-            ref={this.textInput}
-            placeholder="..."
-            autosize={{ minRows: 2, maxRows: 6 }}
-            onChange={e => this.setState({ messageTextInput: e.target.value })}
-          />
-          <Button type="primary" onClick={() => this.sendEmail()}>
-            Send
-          </Button>
-          <Button type="secondary">Clean</Button>
+          <dir><span className="h1">Contact</span></dir>
+          <div>
+            <div className="caption">Email:</div>
+            <TextArea
+              ref={this.setEmailTextInputRef}
+              placeholder="..."
+              autosize
+              onChange={e => this.setState({ emailTextInput: e.target.value })}
+            />
+            <div style={{ margin: "24px 0" }} />
+            <div className="caption">Text:</div>
+            <TextArea
+              ref={this.textInput}
+              placeholder="..."
+              autosize={{ minRows: 2, maxRows: 6 }}
+              onChange={e =>
+                this.setState({ messageTextInput: e.target.value })
+              }
+            />
+          </div>
+          <div className={classes.buttons}>
+            <Button type="primary" onClick={() => this.sendEmail()}>
+              Send
+            </Button>
+            <Button type="secondary">Clean</Button>
+          </div>
         </div>
       </div>
     );

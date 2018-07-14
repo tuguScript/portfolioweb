@@ -23,7 +23,7 @@ const styles = {
 const About0 = ({ classes }) => {
   return (
     <div>
-      <h1 style={{ width: "210px", marginBottom: "0px" }}>About Me</h1>
+      <dir><span className="h1">About Me</span></dir>
       <div className={classes.body}>
         <div className={classes.text}>
           <p className="display">

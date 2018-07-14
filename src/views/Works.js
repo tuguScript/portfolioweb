@@ -19,7 +19,9 @@ class Works0 extends Component {
     });
     return (
       <div>
-        <h1 style={{ width: "130px" }}>Works</h1>
+        <dir style={{ paddingBottom: "30px" }}>
+          <span className="h1">Works</span>
+        </dir>
         <div className={this.props.classes.container}>{Cards}</div>
       </div>
     );
