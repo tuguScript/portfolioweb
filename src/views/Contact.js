@@ -1,11 +1,34 @@
 import React, { Component } from "react";
-import Footer from "../components/Footer/Footer";
 import { Input } from "antd";
 import Button from "../components/Button/Button";
 import axios from "axios";
+import injectSheet from "react-jss";
 const { TextArea } = Input;
 
-export default class Contact extends Component {
+const styles = {
+  form: {
+    width: 500,
+    display: `flex`,
+    height: 300,
+    flexDirection: `column`,
+    justifyContent: `space-around`
+    // margin: '0 auto'
+  },
+  body: {
+    height: `100%`,
+    width: `100%`,
+    display: `flex`,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttons: {
+    width: 150,
+    display: `flex`,
+    justifyContent: `space-between`
+  }
+};
+
+class Contact0 extends Component {
   constructor(props) {
     super(props);
     this.sendEmail = this.sendEmail.bind(this);
@@ -17,7 +40,7 @@ export default class Contact extends Component {
   }
   componentDidMount = () => {
     this.emailTextInput.focus();
-    console.log(this.emailTextInput)
+    console.log(this.emailTextInput);
   };
   sendEmail() {
     if (
@@ -43,30 +66,42 @@ export default class Contact extends Component {
       });
   }
   render() {
+    let classes = this.props.classes;
     return (
-      <div>
-        <h1>Contact</h1>
-        <div className="caption">Email:</div>
-        <TextArea
-          ref={this.setEmailTextInputRef}
-          placeholder="..."
-          autosize
-          onChange={e => this.setState({ emailTextInput: e.target.value })}
-        />
-        <div style={{ margin: "24px 0" }} />
-        <div className="caption">Text:</div>
-        <TextArea
-          ref={this.textInput}
-          placeholder="..."
-          autosize={{ minRows: 2, maxRows: 6 }}
-          onChange={e => this.setState({ messageTextInput: e.target.value })}
-        />
-        <Button type="primary" onClick={() => this.sendEmail()}>
-          Send
-        </Button>
-        <Button type="secondary">Clean</Button>
-        <Footer />
+      <div className={classes.body}>
+        <div className={classes.form}>
+          <dir><span className="h1">Contact</span></dir>
+          <div>
+            <div className="caption">Email:</div>
+            <TextArea
+              ref={this.setEmailTextInputRef}
+              placeholder="..."
+              autosize
+              onChange={e => this.setState({ emailTextInput: e.target.value })}
+            />
+            <div style={{ margin: "24px 0" }} />
+            <div className="caption">Text:</div>
+            <TextArea
+              ref={this.textInput}
+              placeholder="..."
+              autosize={{ minRows: 2, maxRows: 6 }}
+              onChange={e =>
+                this.setState({ messageTextInput: e.target.value })
+              }
+            />
+          </div>
+          <div className={classes.buttons}>
+            <Button type="primary" onClick={() => this.sendEmail()}>
+              Send
+            </Button>
+            <Button type="secondary">Clean</Button>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+const Contact = injectSheet(styles)(Contact0);
+
+export default Contact;
