@@ -20,7 +20,7 @@ export default [
     title: "Cryptocompare.ga",
     description: "React app",
     category: "React/Ruby web app",
-    link: 'www.cryptocompare.ga',
+    link: 'cryptocompare-71302.firebaseapp.com',
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export default [
     title: "Todoro.ga",
     description: "Pomodoro Timer",
     category: "Progressive Web App",
-    link: 'www.todoro.ga',
+    link: 'todoro.ga',
   },
   {
     id: 4,
