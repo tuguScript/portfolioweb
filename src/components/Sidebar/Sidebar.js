@@ -65,7 +65,7 @@ export class Sidebar extends Component {
       <div>
         <div className={this.props.classes.sidebar} />
         <div className={classes.header}>
-          <h3 style={{paddingLeft:40}}>✌️ Tugi</h3>
+          <h3 style={{paddingLeft:40}}>✌️ Tugiii</h3>
         </div>
         <div className={classes.content}>{children}</div>
         <div className={classes.footer}>
